@@ -8,13 +8,10 @@ You can also include images in this folder and reference them in the markdown. E
 -->
 
 ## How it works
+This is an 8bit VHDL implementation of [Tzarc's XORShift](https://github.com/tzarc/qmk_userspace/blob/bebe5e5b21e99bdb8ff41500ade1eac2d8417d8c/users-tzarc/tzarc_common.c#L57-L63). It is a counter based random number generator which based on the previous output and the count of generated numbers generates a new ouput.
 
-Explain how your project works
 
 ## How to test
+This can be tested by running a known good correct implementation of XORShift
+and comparing the output with the output of the manual clocked circuit.
 
-Explain how to use your project
-
-## External hardware
-
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
