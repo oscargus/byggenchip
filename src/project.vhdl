@@ -2,7 +2,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
-entity tt_um_example is
+entity tt_um_fkd_xorshift is
     port (
         ui_in   : in  std_logic_vector(7 downto 0);
         uo_out  : out std_logic_vector(7 downto 0);
@@ -13,9 +13,9 @@ entity tt_um_example is
         clk     : in  std_logic;
         rst_n   : in  std_logic
     );
-end tt_um_example;
+end tt_um_fkd_xorshift;
 
-architecture Behavioral of tt_um_example is
+architecture Behavioral of tt_um_fkd_xorshift is
 	signal counter : unsigned(7 downto 0) := "00000000";
 	signal state : std_logic_vector(7 downto 0) := "00000000";
 	signal previous_state : std_logic_vector(7 downto 0) := "00000000";
@@ -26,7 +26,7 @@ architecture Behavioral of tt_um_example is
 begin
 
 	process(rst_n, clk) begin
-		--if not rising_edge(rst_n) then 
+		--if not rising_edge(rst_n) then
 		if rst_n = '0' then
 			counter <= "00000000";
 			state <= "00000000";
@@ -36,7 +36,7 @@ begin
 
 			if ui_in = previous_state then
 				counter <= counter + 1;
-			else 
+			else
 				previous_state <= ui_in;
 				state <= ui_in;
 				counter <= "00000000";
